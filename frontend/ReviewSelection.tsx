@@ -73,7 +73,7 @@ export function ReviewSelection({ appState, setAppState }) {
 
     const createUnknownRecordCheckResult = table.checkPermissionsForCreateRecord();
     if (!createUnknownRecordCheckResult.hasPermission) {
-      alert("TODO: You don't have permissions to insert new records to " + nameOfTable + ".");
+      alert("You don't have permissions to insert new records to " + nameOfTable + ".");
       return;
     }
 
