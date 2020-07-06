@@ -18,7 +18,7 @@ type AppState = {
     state: object,
 }
 
-function ImportImagesFromFlickrBlock() {
+function ImportImagesFromBingBlock() {
     const viewport = useViewport();
     const { isValid, message, settings } = useSettings();
     const [isSettingsVisible, setIsSettingsVisible] = useState(false);
@@ -62,4 +62,4 @@ function NotFoundPage({ appState }) {
     );
 }
 
-initializeBlock(() => <ImportImagesFromFlickrBlock />);
+initializeBlock(() => <ImportImagesFromBingBlock />);

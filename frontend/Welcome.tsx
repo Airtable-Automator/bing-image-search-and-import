@@ -16,8 +16,6 @@ import { BING_API_KEY } from './settings';
 import { BingSearchClient } from './BingSearchClient'
 
 export function Welcome({ appState, setAppState, setIsSettingsVisible }) {
-  // Check if we've Flickr API Key available, if yes, just move onto the next state else 
-  // welcome user to the block (probably running it for the first time / a new base installation)
   const globalConfig = useGlobalConfig();
   const apiKeyExists = globalConfig.get(BING_API_KEY) as string;
   const [apiKey, setApiKey] = useState(apiKeyExists || "");
