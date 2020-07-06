@@ -44,7 +44,7 @@ export class BingSearchClient {
   }
 
   async search(q: string): Promise<SearchResults> {
-    var queryurl = this.endpoint + "?q=" + encodeURIComponent(q);
+    var queryurl = this.endpoint + "?q=" + encodeURIComponent(q) + "&count=150";
     const headers = {
       "Ocp-Apim-Subscription-Key": this.apiKey,
       "Accept": "application/json",

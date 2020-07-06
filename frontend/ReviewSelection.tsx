@@ -132,7 +132,7 @@ export function ReviewSelection({ appState, setAppState }) {
                       <Box display="flex" marginTop='3px'>
                         <Box display='block' width='200px' paddingRight='5px'>
                           <Heading variant="caps" size="xsmall" textColor="light">Source Name</Heading>
-                          <Text>{pic.hostPageDomainFriendlyName}</Text>
+                          <Text>{pic.hostPageDomainFriendlyName || "N/A"}</Text>
                         </Box>
 
                         <Box display='block' width={viewport.size.width - (1000)} paddingBottom='10px'>
