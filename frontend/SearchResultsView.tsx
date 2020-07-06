@@ -16,7 +16,6 @@ import { thumbnailUrlFor, FIXED_THUMBNAIL_WIDTH, FIXED_THUMBNAIL_HEIGHT } from '
 export function SearchResultsView({ appState, setAppState }) {
   const [items, setItems] = useState(appState.state.selection || []);
   const viewport = useViewport();
-  console.log(appState);
 
   const topbarStyle: CSS.Properties = {
     position: 'fixed',
@@ -36,7 +35,7 @@ export function SearchResultsView({ appState, setAppState }) {
 
   const toggleSelection = (pic) => () => {
     if (isPicSelected(pic)) {
-      setItems(items.filter(function (p) { return p.id !== pic.id; }))
+      setItems(items.filter(function (p) { return p.id !== pic.id; }));
     } else {
       setItems(items.concat([pic]));
     }
@@ -47,31 +46,6 @@ export function SearchResultsView({ appState, setAppState }) {
     updatedAppState.index = 1;
     setAppState(updatedAppState);
   }
-
-  // window.onscroll = debounce(() => {
-  //   const {
-  //     loadUsers,
-  //     state: {
-  //       error,
-  //       isLoading,
-  //       hasMore,
-  //     },
-  //   } = this;
-
-  //   // Bails early if:
-  //   // * there's an error
-  //   // * it's already loading
-  //   // * there's nothing left to load
-  //   if (error || isLoading || !hasMore) return;
-
-  //   // Checks that the page has scrolled to the bottom
-  //   if (
-  //     window.innerHeight + document.documentElement.scrollTop
-  //     === document.documentElement.offsetHeight
-  //   ) {
-  //     loadUsers();
-  //   }
-  // }, 100);
 
   const reviewItems = () => {
     const updatedAppState = { ...appState };

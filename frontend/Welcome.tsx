@@ -13,8 +13,6 @@ import {
 } from '@airtable/blocks/ui';
 import React, { useState, useEffect } from 'react';
 import { BING_API_KEY } from './settings';
-import { ImageSearchClient, ImageSearchModels } from '@azure/cognitiveservices-imagesearch'
-import { CognitiveServicesCredentials } from './CognitiveServicesCredentials'
 import { BingSearchClient } from './BingSearchClient'
 
 export function Welcome({ appState, setAppState, setIsSettingsVisible }) {
@@ -33,7 +31,6 @@ export function Welcome({ appState, setAppState, setIsSettingsVisible }) {
     const bingClient = new BingSearchClient(apiKey);
     bingClient.search("cats")
       .then(function (res) {
-        console.log(res);
         setLoading(false);
         setErrorMessage("");
 
